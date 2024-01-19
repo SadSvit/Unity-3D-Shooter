@@ -1,0 +1,10 @@
+Process name: plastic
+Process image: C:\Program Files\PlasticSCM5\client\plastic.exe
+Process started: 2023.11.05.23.40.20.185
+Error: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+StackTrace:    at System.Collections.Generic.List`1.System.Collections.IList.get_Item(Int32 index)
+   at Codice.CM.WorkspaceServer.DataStore.WkTree.ReadLegacyWorkspaceTree.ReadNode(PlasticBinaryReader reader, IList repSpecs, IList seids, IWorkspaceRevisionInfoCache cache, Options options)
+   at Codice.CM.WorkspaceServer.DataStore.WkTree.ReadLegacyWorkspaceTree.ReadFromStream(Byte version, Stream stream, IWorkspaceRevisionInfoCache revisionCache)
+   at Codice.CM.WorkspaceServer.DataStore.WkTree.ReadLegacyWorkspaceTree.Read(Byte version, Int32 treeSize, FileStream fileStream, Byte[] dataBuffer, Int32 dataOffset, Int32 dataSize, IWorkspaceRevisionInfoCache revisionCache)
+   at Codice.CM.WorkspaceServer.WorkspaceTreeDataStore.ReadWorkspaceContentFromFile(WorkspaceInfo wkInfo, String filePath, IWorkspaceRevisionInfoCache revisionCache, FlexibleBufferPool bufferPool)
+   at Codice.CM.WorkspaceServer.WorkspaceTreeDataStore.ReadWorkspaceTreeContent(WorkspaceInfo wkInfo, String wkTreeFile, IWorkspaceRevisionInfoCache revisionCache, FlexibleBufferPool bufferPool)
