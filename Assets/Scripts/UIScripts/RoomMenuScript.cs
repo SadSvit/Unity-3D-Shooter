@@ -6,12 +6,14 @@ using UnityEngine;
 
 public class RoomMenuScript : MenuScript
 {
-    [SerializeField] private TMP_Text roomNameText;
+    [Header("General settings")]
     [SerializeField] private Transform playersList;
     [SerializeField] private GameObject playerNamePrefab;
-    [SerializeField] private GameObject startGameButton; 
     [SerializeField] private IMultiPlayerMenuManager multiPlayerMenuManager;
-    [SerializeField] public  GameObject Manager { get; set; }
+    
+    [Header("UI settings")]
+    [SerializeField] private TMP_Text roomNameText;
+    [SerializeField] private GameObject startGameButton;
 
     public void Start()
     {

@@ -26,10 +26,12 @@ public class SettingsMenuScript : MenuScript
     {
         MenuName = MenuNames.SettingsMenu;
     }
+
     public void OpenSetingsMenu()
     {
         menuManager.OpenMenu(MenuNames.SettingsMenu);
     }
+
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
@@ -88,12 +90,9 @@ public class SettingsMenuScript : MenuScript
     }
 
     float GetPercentage(float value, float min, float max)
-    {
-        // Убедимся, что значение находится в пределах от min до max
-        value = Mathf.Clamp(value, min, max);
-        // Вычисляем процент
+    {        
+        value = Mathf.Clamp(value, min, max);       
         float percentage = (value - min) / (max - min) * 100;
-
         return percentage;
     }
 

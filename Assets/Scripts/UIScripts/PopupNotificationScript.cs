@@ -1,7 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
 public class PopupNotificationScript : MonoBehaviour
 {
     private float countdownTimer = 3;
@@ -47,11 +47,10 @@ public class PopupNotificationScript : MonoBehaviour
 
         while (tempTimer >= 0f)
         {
-            yield return new WaitForSeconds(1f); // Ждем 1 секунду
+            yield return new WaitForSeconds(1f);  
             tempTimer--;
             countDownText.text = tempTimer.ToString();
 
-            // Если таймер истек, выходим из комнаты
             if (tempTimer <= 0f)
             {
                 GetComponent<Animator>().SetTrigger("AppearIdle");

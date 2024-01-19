@@ -1,14 +1,11 @@
 using Photon.Pun;
 using Photon.Pun.UtilityScripts;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-
     [Header("General settings")]
     [SerializeField] protected Transform playerController;
     [SerializeField] protected Transform playerHandsTransform;

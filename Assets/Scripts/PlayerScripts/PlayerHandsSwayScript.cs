@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHandsSwayScript : MonoBehaviour
@@ -33,6 +31,5 @@ public class PlayerHandsSwayScript : MonoBehaviour
 
         // Плавно изменяем локальную позицию объекта, чтобы он реагировал на движение мыши
         transform.localPosition = Vector3.Lerp(transform.localPosition, target + origin, Time.deltaTime * smoothing);
-
     }
 }

@@ -8,15 +8,18 @@ using UnityEngine;
 
 public class MainMenuScript : MenuScript
 {
+    [Header("General settings")]
     private List<string> namesOfAvailableRooms = new List<string>();
     private List<RoomInfo> availableRooms = new List<RoomInfo>();
-
-    [SerializeField] private TMP_InputField createRoomInputField;
-    [SerializeField] private TMP_InputField connetToRoomInputField;
 
     private float timeBetweenUpdates = 1.5f;
     private float nextUpdate;
 
+    [Header("UI settings")]
+    [SerializeField] private TMP_InputField createRoomInputField;
+    [SerializeField] private TMP_InputField connetToRoomInputField;
+
+    [Header("Action settings")]
     public static Action<string> onErorAppear;
 
     public void Start()
@@ -91,6 +94,7 @@ public class MainMenuScript : MenuScript
         base.OnCreateRoomFailed(returnCode, message);
         onErorAppear("Error:" + message);
     }
+
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
         base.OnRoomListUpdate(roomList);

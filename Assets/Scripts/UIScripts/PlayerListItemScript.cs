@@ -2,8 +2,6 @@ using UnityEngine;
 using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
-using UnityEngine.UI;
-using System.Collections.Generic;
 
 public class PlayerListItemScript : MonoBehaviourPunCallbacks
 {

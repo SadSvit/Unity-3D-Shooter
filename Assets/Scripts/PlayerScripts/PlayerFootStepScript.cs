@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerFootStepScript : MonoBehaviour
 {
+    [Header("General settings")]
     private CharacterController characterController;
 
     private string currentAnimation = "";

@@ -1,6 +1,4 @@
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -11,7 +9,6 @@ public class GameCavasScript : MonoBehaviour
 
     [Header("UI")]
     public GameObject leaderBoard;
-
     public GameObject gameEndPanel;
     public GameObject gameResultImage;
 

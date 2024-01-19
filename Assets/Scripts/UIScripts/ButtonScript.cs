@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +13,7 @@ public class ButtonScript : MonoBehaviour
     public Sprite disableButtonSprite;
 
     Image buttonImage;
+
     public void PointerEnter()
     {
         buttonImage = GetComponent<Image>();
@@ -22,12 +21,14 @@ public class ButtonScript : MonoBehaviour
 
         audioSource.PlayOneShot(hoverSound);
     }
+
     public void PointerExit()
     {
         buttonImage = GetComponent<Image>();
         buttonImage.sprite = disableButtonSprite;
 
     }
+
     public void PointerClick()
     {
         audioSource.PlayOneShot(clickSound);

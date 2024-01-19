@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class GamePopupMenuManagerScript : PopupManager
 {
+    [Header("Action settings")]
     public static Action onPopupMenuAppear;
     public static Action onPopupMenuDisappear;
 

@@ -1,7 +1,4 @@
 using Photon.Pun;
-using Photon.Realtime;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMouseLookScript : MonoBehaviourPunCallbacks, IPunObservable
@@ -110,7 +107,7 @@ public class PlayerMouseLookScript : MonoBehaviourPunCallbacks, IPunObservable
             syncHandsStartQuaternion = playerHands.transform.localRotation; // начальная величина по вертикали в blend tree
 
             syncControllerEndQuaternion = syncControllerQuaternion; // конечная  величина вертикального ввода, к которой будет стримиться анимация в blend tree
-            syncControllerStartQuaternion = transform.localRotation; // начальная величина по вертикали в blend tree*/
+            syncControllerStartQuaternion = transform.localRotation; // начальная величина по вертикали в blend tree 
         }
     }
 }

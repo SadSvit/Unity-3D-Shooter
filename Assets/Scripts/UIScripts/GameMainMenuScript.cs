@@ -1,15 +1,15 @@
 using Photon.Pun;
 using Photon.Realtime;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameMainMenuScript : MenuScript
 {
+    [Header("General settings")]
     [SerializeField] PopupManager popupMenuManager;
 
+    [Header("Action settings")]
     public static Action<Player> onPlayerLeftRoom;
 
     public void Start()
@@ -26,6 +26,7 @@ public class GameMainMenuScript : MenuScript
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene("LoadingScene");
     }
+
     public void OpenSettingsMenu()
     {
         menuManager.OpenMenu(MenuNames.SettingsMenu);

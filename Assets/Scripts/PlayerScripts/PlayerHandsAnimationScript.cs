@@ -1,6 +1,4 @@
 using Photon.Pun;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHandsAnimationScript : MonoBehaviour
@@ -19,6 +17,7 @@ public class PlayerHandsAnimationScript : MonoBehaviour
     {
         photonView = GetComponent<PhotonView>();
     }
+
     public void GetHitAnimation()
     {
         playerHandsAnimator.SetTrigger("GetHit");
@@ -57,14 +56,17 @@ public class PlayerHandsAnimationScript : MonoBehaviour
         playerHandsAnimator.SetBool("IsWalk", false);
         playerHandsAnimator.SetBool("IsRun", false);
     }
+
     public void EnableApplyRootMotion()
     {
         playerHandsAnimator.applyRootMotion = true;
     }
+
     public void DisableApplyRootMotion()
     {
         playerHandsAnimator.applyRootMotion = false;
     }
+
     // ћетод дл€ проверки, проигрываетс€ ли анимаци€ сейчас
     public bool IsAnimationPlaying(string name)
     {

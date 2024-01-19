@@ -1,19 +1,16 @@
 using Photon.Pun;
-using Photon.Realtime;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
-using System.Linq;
 
 public class GameManagerScript : MonoBehaviourPunCallbacks
 {
+    [Header("General settings")]
     private int livePlayersCounter;
 
     [Header("Game end settings")]
-
     [SerializeField] private TMP_Text countdownText;
     private float countdownTimer = 20f; // Время в секундах
 
@@ -22,6 +19,7 @@ public class GameManagerScript : MonoBehaviourPunCallbacks
     [SerializeField] private List<GameObject> coins;
     [SerializeField] private List<Transform> coinSpawnPoints;
 
+    [Header("Action settings")]
     public static Action onGameEnd;
 
     public override void OnEnable()
@@ -38,11 +36,10 @@ public class GameManagerScript : MonoBehaviourPunCallbacks
         PlayerHealthScript.onLocalPlayerDeath -= GameEndCheck;
     }
 
-
     public void Start()
     {
         InvokeRepeating(nameof(SpawnCoin), 10, 10);
-    }  
+    }
 
     //метод для спавна монет
     private void SpawnCoin()

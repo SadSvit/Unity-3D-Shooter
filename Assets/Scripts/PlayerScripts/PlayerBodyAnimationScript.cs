@@ -1,13 +1,9 @@
 using Photon.Pun;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
-using UnityEngine.Networking;
+
 public class PlayerBodyAnimationScript : MonoBehaviourPunCallbacks, IPunObservable
 {
-
     [Header("General settings")]
     [SerializeField] private Animator playerBodyAnimator;
 
@@ -35,6 +31,7 @@ public class PlayerBodyAnimationScript : MonoBehaviourPunCallbacks, IPunObservab
         lastSynchronizationTime = Time.time;
         photonView = GetComponent<PhotonView>();
     }
+
     void Update()
     {
         if (photonView.IsMine)
@@ -66,6 +63,7 @@ public class PlayerBodyAnimationScript : MonoBehaviourPunCallbacks, IPunObservab
 
         }
     }
+
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         float syncVerticalInput; // для синхронизации вертикального ввода

@@ -1,17 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
-using System;
 
 public class PlayerSpawnScript : MonoBehaviourPunCallbacks
 {
-
     [SerializeField] private GameObject playerPrefab;
-    [SerializeField] private Transform[] playerSpawnPoints;
-    private Player[] players;
     private GameObject localPlayer;
+
+    private Player[] players;
+    [SerializeField] private Transform[] playerSpawnPoints;
 
     private void Start()
     {
@@ -27,10 +24,10 @@ public class PlayerSpawnScript : MonoBehaviourPunCallbacks
                 localPlayer.GetComponent<PhotonView>().RPC("SetNickname", RpcTarget.AllBuffered, PhotonNetwork.NickName);
 
                 //определение игрока, как локального пользователя
-                localPlayer.GetComponent<PlayerSetupScript>().IsLocalPlayer();                  
+                localPlayer.GetComponent<PlayerSetupScript>().IsLocalPlayer();
             }
         }
     }
-  
+
 }
 

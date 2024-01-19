@@ -1,13 +1,10 @@
 using Photon.Pun;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerSetupScript : MonoBehaviour
 {
-
     [Header("General settings")]
     [SerializeField] private Camera playerCamera;
     [SerializeField] private Camera weaponCamera;
@@ -53,6 +50,7 @@ public class PlayerSetupScript : MonoBehaviour
             GameManagerScript.onGameEnd -= PlayerDeathSetup;
         }
     }
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -105,6 +103,7 @@ public class PlayerSetupScript : MonoBehaviour
         ChangeLayerRecursivelyTo(playerHands.transform, "LocalPlayerHands");
         ChangeLayerRecursivelyTo(playeSkin.transform, "LocalPlayerBody");
     }
+
     private void ChangePlayerLayersToAnotherPlayer()
     {
         DisableLayerByName(weaponCamera, "LocalPlayerHands");

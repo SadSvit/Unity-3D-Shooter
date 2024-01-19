@@ -1,20 +1,17 @@
  using Photon.Pun;
- using Photon.Pun;
 using Photon.Realtime;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using System;
 using System.Linq;
 using Photon.Pun.UtilityScripts;
 
 public class LeaderBoardScript : MonoBehaviour
 {  
-    [Header("Options")]
+    [Header("General settings")]
     [SerializeField] private float refreshRate = 1f; // Частота обновления лидерборда
 
-    [Header("UI")]
+    [Header("UI settings")]
     public GameObject[] slots; // Массив слотов для отображения игроков
     [Space]
     public TextMeshProUGUI[] scoreTexts; // Массив текстовых элементов для отображения счета игроков

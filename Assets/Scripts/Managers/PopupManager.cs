@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PopupManager : MenuManagerScript, IPopupable
-{
-    [field: SerializeField] public GameObject[] popupContent { get; set; }
-    public bool isOpen { get; set ;}
+{        
+    public bool isOpen { get; set; }
     protected KeyCode popupControllerButton;
+    [field: SerializeField] public GameObject[] popupContent { get; set; }
+ 
 
     public virtual void Start()
     {

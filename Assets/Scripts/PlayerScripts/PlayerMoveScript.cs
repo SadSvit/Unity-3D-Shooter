@@ -1,9 +1,8 @@
 using Photon.Pun;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
+
 public class PlayerMoveScript : MonoBehaviourPunCallbacks, IPunObservable
 {
     [Header("General settings")]
@@ -120,6 +119,7 @@ public class PlayerMoveScript : MonoBehaviourPunCallbacks, IPunObservable
             networkMoveDirection = (Vector3)stream.ReceiveNext();
         }
     }
+
     private void ApplyGravityToPlayer()
     {
         float rayDistance = characterController.height / 2 + 0.2f;
@@ -146,6 +146,7 @@ public class PlayerMoveScript : MonoBehaviourPunCallbacks, IPunObservable
             verticalSpeed += gravity * 3 * Time.deltaTime;
         }
     }
+
     private IEnumerator PlayerMakeJump()
     {
         if (Input.GetButtonDown("Jump"))

@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PopupMainMenuScript : MenuScript
 {
     [SerializeField] PopupManager popupMenuManager;
+
     private void Start()
     {
         MenuName = MenuNames.MainMenu;       

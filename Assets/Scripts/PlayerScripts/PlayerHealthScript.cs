@@ -1,16 +1,16 @@
 using Photon.Pun;
-using System.Collections;
 using System;
 using UnityEngine;
 using Photon.Realtime;
 
 public class PlayerHealthScript : MonoBehaviourPunCallbacks
 {
-
+    [Header("General settings")]
     [SerializeField] public int playerHealth;
     [SerializeField] public bool isDeath = false;
     [SerializeField] private Camera playerCamera;
 
+    [Header("Action settings")]
     public static Action OnSpawn;
     public static Action onAnotherPlayerDeath;
     public static Action onLocalPlayerDeath;
@@ -18,13 +18,13 @@ public class PlayerHealthScript : MonoBehaviourPunCallbacks
     public override void OnEnable()
     {
         base.OnEnable();
-        GameMainMenuScript.onPlayerLeftRoom += PlayerDeath;
+        GameMainMenuScript.onPlayerLeftRoom += PlayerDeathAfterLeaveRoom;
     }
 
     public override void OnDisable()
     {
         base.OnDisable();
-        GameMainMenuScript.onPlayerLeftRoom -= PlayerDeath;
+        GameMainMenuScript.onPlayerLeftRoom -= PlayerDeathAfterLeaveRoom;
     }
 
     void Start()
@@ -63,7 +63,7 @@ public class PlayerHealthScript : MonoBehaviourPunCallbacks
         }
     }
 
-    public void PlayerDeath(Player otherPlayer)
+    public void PlayerDeathAfterLeaveRoom(Player otherPlayer)
     {
         if (otherPlayer.NickName == GetComponent<PhotonView>().Owner.NickName)
         {      
